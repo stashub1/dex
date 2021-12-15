@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>DEX</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">DEX</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+    <button id="login_button" class="btn btn-outline-primary my-2 my-sm-0" type="submit">      
+     Sign in with metamask</button>
+    </div>
+
+  </nav>
+
+
+ <!--  <div class="container">
+    <div class="raw" >
+      <div class="col col-md-6 offset-md-3" id="window">
+        
+        <h4>Swap</h4> -->
+
+        <div  class="container">
+          <div class="raw">
+            <div class="col col-md-6 offset-md-3 bg-dark " id="window">
+                <div class="d-flex justify-content-center">
+                  <h3 class="form_element">Swap</h3>
+                </div>
+
+                <!-- From raw -->
+                <div class= "row d-flex align-items-center" id="from_raw" >
+                  <div class="swapbox_select row align-items-center col-auto mr-auto" id="from_currency_container">
+                    <img class="token_image" id="from_image"></img>
+                    <div class="symbol_name" id="from_token"></div>
+                    <i class="material-icons">expand_more</i>
+                  </div>
+
+
+                  <div class="col-auto">
+                    <input class="number form-control" placeholder="amount" id="from_amount">
+                  </div>
+                </div>
+
+                <!-- To raw -->
+                <div class= "row d-flex align-items-center" id="to_raw" >
+                  <div class="swap_raw swapbox_select row align-items-center col-auto mr-auto">
+                    <img class="token_image" id="from_image"></img>
+                    <div class="symbol_name" id="from_token"></div>
+                    <i class="material-icons">expand_more</i>
+                  </div>
+                  <div class="col-auto">
+                    <input class="number form-control" placeholder="amount" id="from_amount">
+                  </div>
+                </div>
+
+                <!-- Button -->
+                <div class="d-flex justify-content-center" 
+                      id="button_swap_container">
+                  <button type="button" class="btn btn-primary btn-block" id="button_swap">Primary</button>
+                </div>
+
+              </div>
+
+              <!-- Modal -->
+              <div class="modal" id="token_modal" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Select token</h5>
+                    <button type="button" id="modal_close" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal_body">
+                    <div id="token_list"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+         
+     <!--    </div>
+      </div>
+  </div> -->
+
+    <script type="text/javascript" src="./main.js"></script>
+
+  </body>
+
+</html>

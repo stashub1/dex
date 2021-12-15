@@ -1,0 +1,83 @@
+#window {
+	 background-color: 	#000;
+	 margin-top: 50px;
+	 color: white;
+	 padding-bottom: 16px;
+ 	 padding-top: 16px;
+ 	 border-radius: 10px;
+ 	 box-shadow: 0 0 3px black;
+}
+
+#from_raw {
+	margin-top: 16px;
+}
+
+#from_currency_container {
+	margin-left: 16px;
+	margin-top, margin-right, margin-bottom: 16px; 
+	padding: 8px;
+	background-color: grey;
+	border-radius: 10px;
+}
+
+#from_currency_container:hover {
+	transition: opacity 0.3s ease-in-out;
+	cursor:pointer;
+	opacity: 0.5;
+}
+
+
+
+
+/*.swapbox_select {
+	margin-left: 16px;
+}*/
+
+#button_swap_container{
+	margin-top: 32px;
+	margin-top, margin-right, margin-bottom: 16px; 
+}
+
+.symbol_name {
+  vertical-align: middle;
+}
+
+
+.token_list_image, .token_image {
+	width: 40px;
+}
+
+.modal_body {
+	max-height: calc(100% - 120px);
+    overflow-y: auto;
+}
+#token_list {	
+	padding: 5px;
+}
+
+.token_raw {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.token_raw:hover{
+	transition: opacity 0.3s ease-in-out;
+	cursor:pointer;
+	opacity: 0.5;
+	background-color: grey;
+}
+
+
+.token_list_symbol {
+	pading-left: 8px;
+}
+
+#to_raw {
+	margin-top: 16px;
+}
+.modal-dialog,
+.modal-content {
+    /* 80% of window height */
+    height: 80%;
+}
+
