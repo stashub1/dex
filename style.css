@@ -8,11 +8,11 @@
  	 box-shadow: 0 0 3px black;
 }
 
-#from_raw {
+.choose_raw {
 	margin-top: 16px;
 }
 
-#from_currency_container {
+.currency_container {
 	margin-left: 16px;
 	margin-top, margin-right, margin-bottom: 16px; 
 	padding: 8px;
@@ -20,7 +20,7 @@
 	border-radius: 10px;
 }
 
-#from_currency_container:hover {
+.currency_container:hover {
 	transition: opacity 0.3s ease-in-out;
 	cursor:pointer;
 	opacity: 0.5;

@@ -49,8 +49,8 @@
                 </div>
 
                 <!-- From raw -->
-                <div class= "row d-flex align-items-center" id="from_raw" >
-                  <div class="swapbox_select row align-items-center col-auto mr-auto" id="from_currency_container">
+                <div class= "row d-flex align-items-center choose_raw" id="from_raw" >
+                  <div class="swapbox_select row align-items-center col-auto mr-auto currency_container" id="from_currency_container">
                     <img class="token_image" id="from_image"></img>
                     <div class="symbol_name" id="from_token"></div>
                     <i class="material-icons">expand_more</i>
@@ -58,19 +58,21 @@
 
 
                   <div class="col-auto">
-                    <input class="number form-control" placeholder="amount" id="from_amount">
+                    <input class="number form-control" placeholder="amount">
                   </div>
                 </div>
 
                 <!-- To raw -->
                 <div class= "row d-flex align-items-center" id="to_raw" >
-                  <div class="swap_raw swapbox_select row align-items-center col-auto mr-auto">
-                    <img class="token_image" id="from_image"></img>
-                    <div class="symbol_name" id="from_token"></div>
+                  <div class="swapbox_select row align-items-center col-auto mr-auto currency_container" id="to_currency_container">
+                    <img class="token_image" id="to_image"></img>
+                    <div class="symbol_name" id="to_token"></div>
                     <i class="material-icons">expand_more</i>
                   </div>
+
+
                   <div class="col-auto">
-                    <input class="number form-control" placeholder="amount" id="from_amount">
+                    <input class="number form-control amount" placeholder="amount">
                   </div>
                 </div>
 
@@ -79,7 +81,6 @@
                       id="button_swap_container">
                   <button type="button" class="btn btn-primary btn-block" id="button_swap">Primary</button>
                 </div>
-
               </div>
 
               <!-- Modal -->
