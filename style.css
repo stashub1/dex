@@ -75,9 +75,13 @@
 #to_raw {
 	margin-top: 16px;
 }
+
 .modal-dialog,
 .modal-content {
     /* 80% of window height */
     height: 80%;
 }
+
+
+
 

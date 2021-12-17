@@ -100,27 +100,44 @@ function closeModal() {
   modalType = 0;
 }
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+const quote = async function countQuote() {
+
+      // disable button
+  $("#to_input").prop("disabled", true);
+  $("#from_input").append(
+    `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
+  );
+  console.log("countQuote");
+  if(!currentSelectedFrom || !currentSelectedTo) return;
+
+  let value = Number(Moralis.Units.Token(document.getElementById("from_input").value, currentSelectedFrom.decimals));
+
+  const quote = await Moralis.Plugins.oneInch.quote({
+    chain: 'eth', // The blockchain you want to use (eth/bsc/polygon)
+    fromTokenAddress: currentSelectedFrom.address, // The token you want to swap
+    toTokenAddress: currentSelectedTo.address, // The token you want to receive
+    amount: value,
+  })
+  console.log(quote);
+  var finalValue = Number(Moralis.Units.FromWei(quote .toTokenAmount, currentSelectedTo.decimals));
+  console.log(finalValue);
+  document.getElementById("to_input").value = finalValue.toFixed(2);
+}
+
 init();
 
 document.getElementById("modal_close").onclick = closeModal;
-// document.getElementById("from_currency_container").onclick = openModal;
-// document.getElementById("to_currency_container").onclick = openModal;
-
 document.getElementById("from_currency_container").addEventListener("click", function() {
     openModal(1);
 }, false);
 document.getElementById("to_currency_container").addEventListener("click", function() {
     openModal(2);
 }, false);
+document.getElementById("from_input").addEventListener("input", quote);
 
-//document.getElementById(" ").onclick = login;
 
-/** Useful Resources  */
 
-// https://docs.moralis.io/moralis-server/users/crypto-login
-// https://docs.moralis.io/moralis-server/getting-started/quick-start#user
-// https://docs.moralis.io/moralis-server/users/crypto-login#metamask
-
-/** Moralis Forum */
-
-// https://forum.moralis.io/
