@@ -107,14 +107,13 @@ function numberWithCommas(x) {
 const quote = async function countQuote() {
 
       // disable button
-  $("#to_input").prop("disabled", true);
-  $("#from_input").append(
-    `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
-  );
-  console.log("countQuote");
+  $("#input_loader").prop("disabled", true);
+  $("#input_loader").show();
+  
   if(!currentSelectedFrom || !currentSelectedTo) return;
 
-  let value = Number(Moralis.Units.Token(document.getElementById("from_input").value, currentSelectedFrom.decimals));
+  let value = Number(Moralis.Units.Token(document.getElementById("from_input").value, 
+        currentSelectedFrom.decimals));
 
   const quote = await Moralis.Plugins.oneInch.quote({
     chain: 'eth', // The blockchain you want to use (eth/bsc/polygon)
@@ -122,13 +121,25 @@ const quote = async function countQuote() {
     toTokenAddress: currentSelectedTo.address, // The token you want to receive
     amount: value,
   })
-  console.log(quote);
-  var finalValue = Number(Moralis.Units.FromWei(quote .toTokenAmount, currentSelectedTo.decimals));
+  var finalValue = Number(Moralis.Units.FromWei(quote.toTokenAmount, 
+      currentSelectedTo.decimals));
   console.log(finalValue);
-  document.getElementById("to_input").value = finalValue.toFixed(2);
+  if(Number.isNaN(finalValue)) {
+    ocument.getElementById("to_input").value = 0;
+  } else {
+    document.getElementById("to_input").value = finalValue.toFixed(2);
+
+    $("#input_loader").prop("disabled", false);
+    $("#input_loader").hide();
+  }
 }
 
 init();
+
+$(document).ready(function () {
+  console.log("Document is ready");
+  $("#input_loader").hide();
+})
 
 document.getElementById("modal_close").onclick = closeModal;
 document.getElementById("from_currency_container").addEventListener("click", function() {
